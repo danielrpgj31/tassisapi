@@ -4,6 +4,8 @@
 - [Facebook for Developers - Apps](https://developers.facebook.com/apps/)
 - [Seu Authtoken no Ngrok](https://dashboard.ngrok.com/get-started/your-authtoken)
 - [Gerenciador de Números do WhatsApp Business](https://business.facebook.com/latest/whatsapp_manager/phone_numbers)
+- [Gerenciador do WhatsApp Business](https://business.facebook.com/latest/whatsapp_manager/)
+- [Configurações da Conta do WhatsApp Business](https://business.facebook.com/latest/settings/whatsapp_account)
 
 ### Comandos
 
