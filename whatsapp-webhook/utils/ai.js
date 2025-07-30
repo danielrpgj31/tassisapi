@@ -1,6 +1,10 @@
 const axios = require('axios');
 
-const apiKey = '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'; // Substitua pela sua chave real
+const apiKey =  process.env.OPENAI_API_KEY;
+if (!apiKey) {
+  console.error('Chave da API do OpenAI não está definida. Por favor, defina a variável de ambiente OPENAI_API_KEY.');
+  process.exit(1);
+}
 
 async function chamarChatGPT() {
   try {

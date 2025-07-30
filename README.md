@@ -18,7 +18,7 @@ curl "https://ec2-54-86-175-192.compute-1.amazonaws.com:3000/webhook?hub.mode=su
 
 curl "http://localhost:3000/webhook?hub.mode=subscribe&hub.verify_token=seu_token_secreto"
 
-curl "https://8c70434db9c5.ngrok-free.app/webhook?hub.mode=subscribe&hub.verify_token=seu_token_secreto"
+curl "https://c14d0df33d9d.ngrok-free.app/webhook?hub.mode=subscribe&hub.verify_token=seu_token_secreto"
 ```
 
 #### Configuração exposição com ngrok (https)
