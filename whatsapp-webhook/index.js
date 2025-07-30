@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+require('dotenv').config(); // carrega o .env para process.env
 const app = express();
+
 const port = process.env.PORT || 3000;
 
 // Token que você define no painel do WhatsApp Meta
