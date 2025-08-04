@@ -35,22 +35,23 @@ app.get('/webhook', (req, res) => {
 app.post('/webhook', async (req, res) => {
   var respostaIA = ""
 
-  console.log('Mensagem recebida:', JSON.stringify(req.body, null, 2));
+  // LOG de inicio
+  console.log('#################################################### INICIO DO PROCESSO ####################################################');
 
   // Recupera o campo text.body do primeiro message, se existir
   const messages = req.body.entry?.[0]?.changes?.[0]?.value?.messages;
   let textBody = null;
+
   if (messages && messages.length > 0 && messages[0].text && messages[0].text.body) {
-    
+
+    // Recupera a mensagem de texto
     textBody = messages[0].text.body;
-    console.log('#################################################### INICIO DO PROCESSO ####################################################');
 
     // ####### Pergunta para a Inteligência Artificial (Ollama)
     try {
-
       console.log('>> Mensagem recebida. Questão submetida para a IA...');
       respostaIA = await perguntaIA(textBody);
-      console.log('>> Resposta recebida:', respostaIA);
+      console.log('>> Resposta da IA recebida:', respostaIA);
 
     } catch (error) {
       console.error('!! Erro ao obter resposta da IA:', error.message);
@@ -58,8 +59,9 @@ app.post('/webhook', async (req, res) => {
 
     // ####### Envia resposta ao zap
     try {
+      console.log('>> Resposta enviada para o whatsapp...');      
       const resposta_envio_zap = await enviarMensagemWhatsApp(respostaIA, process.env.PHONE_DESTINATION);
-      console.log('>> Resposta do Envio Zap:', resposta_envio_zap);
+      console.log('>> Status de envio (Resposta da Whatsapp Business API WABA):', resposta_envio_zap);
       // Aqui você pode integrar o envio da resposta para o WhatsApp, se desejar
     } catch (error) {
       console.error('!! Erro ao obter resposta do envio zap:', error.message);
