@@ -11,6 +11,26 @@
 
 ### Comandos
 
+#### Teste de chamada do ChatGPT
+
+A chamada do script node deve ser realizada a partir do diretório raiz do projeto, para que o arquivo .env correto seja carregado.
+
+```bash
+$ cd ./whatsapp-webhook/
+$ node utils/chatgpt/index.js 
+
+[dotenv@17.2.1] injecting env (5) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+Chave da API do OpenAI está definida.
+Erro ao chamar a API: {
+  error: {
+    message: 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.',
+    type: 'insufficient_quota',
+    param: null,
+    code: 'insufficient_quota'
+  }
+}
+```
+
 #### Teste de chamada do webhook
 
 ```bash
